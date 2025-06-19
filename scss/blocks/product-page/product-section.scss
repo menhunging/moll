@@ -1,0 +1,39 @@
+.product-section {
+}
+
+.product-section-head {
+}
+
+.product-section-head__inner {
+}
+
+.product-section-head__left {
+}
+
+.product-section-head__right {
+}
+
+.product-section-body {
+  background-color: #f2f2f2;
+  padding-bottom: 125px;
+  overflow: hidden;
+
+  .adv-section {
+    padding: 0;
+  }
+
+  .adv-section__head {
+    text-align: left;
+  }
+
+  .adv-item {
+    background-color: $colorWhite;
+  }
+
+  .slider-catalog-wrapper {
+    overflow: visible;
+  }
+}
+
+.product-section-head__body {
+}

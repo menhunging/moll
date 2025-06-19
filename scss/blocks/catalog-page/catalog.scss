@@ -1,0 +1,25 @@
+.catalog {
+  padding: 30px 0;
+
+  @include responsive1549 {
+    padding: 10px 0;
+  }
+
+  .catalog__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px 24px;
+
+    @include responsive1549 {
+      gap: 16px;
+    }
+
+    @include responsive767 {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include responsive389 {
+      gap: 8px;
+    }
+  }
+}

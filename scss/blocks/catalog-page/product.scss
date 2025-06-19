@@ -1,0 +1,99 @@
+.product {
+  background-color: #f7f7f7;
+  //   background: linear-gradient(180deg, rgba(236, 236, 236, 0) 0%, #ECECEC 100%);
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+
+  .picture-block {
+    position: relative;
+    width: 100%;
+    padding-top: calc(390 / 460 * 100%);
+    transition: all 0.3s;
+    @include invisLink;
+    overflow: hidden;
+    mix-blend-mode: multiply;
+
+    @include responsive1549 {
+      padding-top: calc(280 / 350 * 100%);
+    }
+
+    @include responsive1199 {
+      padding-top: calc(316 / 350 * 100%);
+    }
+
+    @include hover {
+      transform: scale(1.05);
+    }
+  }
+
+  .product__controls {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    gap: 5px;
+    pointer-events: none;
+
+    @include responsive767 {
+      top: 10px;
+      left: 10px;
+    }
+
+    .sale {
+    }
+  }
+
+  .product__info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 30px;
+    gap: 6px;
+
+    @include responsive767 {
+      padding: 10px;
+    }
+  }
+
+  .status {
+    margin-bottom: 15px;
+
+    @include responsive1549 {
+      margin-bottom: 6px;
+    }
+  }
+
+  .product__name {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 30px;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    transition: text-decoration 0.3s;
+    margin-bottom: 6px;
+
+    @include responsive1549 {
+      font-size: 20px;
+      line-height: 26px;
+    }
+
+    @include responsive1199 {
+      font-size: 16px;
+      line-height: 18px;
+    }
+
+    @include responsive389 {
+      font-size: 14px;
+      line-height: 16px;
+    }
+
+    @include hover {
+      text-decoration-color: $colorBlack;
+    }
+  }
+
+  .price {
+    margin-top: auto;
+  }
+}

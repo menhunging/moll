@@ -1,0 +1,110 @@
+.pagination {
+  padding: 50px 0;
+
+  @include responsive1549 {
+    padding: 40px 0;
+  }
+
+  @include responsive767 {
+    padding: 25px 0 0;
+  }
+}
+
+.pagination__list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+
+  @include responsive767 {
+    gap: 8px;
+  }
+}
+
+.pagination__item {
+}
+
+.pagination__prev {
+  background-color: $colorBlue;
+  width: 53px;
+  height: 43px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 36px;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='7' height='12' viewBox='0 0 7 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M6 11L1 6.00001L6 1' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ");
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 0.3s;
+
+  @include responsive767 {
+    width: 40px;
+    height: 32px;
+  }
+
+  @include hover {
+    background-color: $colorBlack;
+  }
+}
+
+.pagination__link {
+  width: 43px;
+  height: 43px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #ebebeb;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  transition: all 0.3s;
+
+  @include responsive767 {
+    gap: 8px;
+    font-size: 12px;
+    line-height: 14px;
+    width: 32px;
+    height: 32px;
+  }
+
+  @include hover {
+    background-color: $colorBlue;
+    color: $colorWhite;
+  }
+
+  &.active {
+    background-color: $colorBlack;
+    color: $colorWhite;
+  }
+}
+
+.pagination__next {
+  background-color: $colorBlue;
+  width: 53px;
+  height: 43px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 36px;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='7' height='12' viewBox='0 0 7 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1 1L6 5.99999L1 11' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ");
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 0.3s;
+
+  @include responsive767 {
+    width: 40px;
+    height: 32px;
+  }
+
+  @include hover {
+    background-color: $colorBlack;
+  }
+}

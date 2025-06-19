@@ -1,0 +1,33 @@
+@import "./shared/values";
+@import "./shared/mixins";
+@import "./shared/reset";
+
+@import "base";
+
+// components
+@import "./components/breadcrumbs";
+@import "./components/pagination";
+@import "./components/video-section";
+@import "./components/btns";
+@import "./components/captions";
+@import "./components/modals";
+@import "./components/burger";
+@import "./components/header";
+@import "./components/footer";
+
+// HOME PAGE
+@import "blocks/home-page/grettings-main.scss";
+
+// CATALOG PAGE
+@import "blocks/catalog-page/product.scss";
+@import "blocks/catalog-page/catalog.scss";
+@import "blocks/catalog-page/slider-catalog.scss";
+@import "blocks/catalog-page/buy-from.scss";
+@import "blocks/catalog-page/adv-section.scss";
+@import "blocks/catalog-page/collections.scss";
+
+// PRODUCT PAGE
+@import "blocks/product-page/product-section.scss";
+
+// BLOCKS
+@import "blocks";

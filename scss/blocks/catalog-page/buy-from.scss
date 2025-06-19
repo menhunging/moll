@@ -1,0 +1,138 @@
+.buy-from {
+  position: relative;
+}
+
+.buy-from__inner {
+  border: solid 1px #c2c2c2;
+  border-radius: 20px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+  color: #8a8a8a;
+
+  @include responsive1199 {
+    padding: 24px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  @include responsive767 {
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px;
+  }
+
+  @include responsive389 {
+    padding: 24px;
+  }
+}
+
+.buy-from__left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 505px;
+  gap: 20px;
+
+  @include responsive1549 {
+    width: 365px;
+  }
+
+  @include responsive1199 {
+    width: 350px;
+  }
+
+  @include responsive1023 {
+    width: 290px;
+  }
+
+  @include responsive767 {
+    width: 100%;
+  }
+}
+
+.buy-from__title {
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 44px;
+  color: $colorBlack;
+
+  @include responsive1549 {
+    font-size: 34px;
+    line-height: 36px;
+  }
+
+  @include responsive767 {
+    font-size: 20px;
+    line-height: 22px;
+  }
+}
+
+.buy-from__right {
+  width: 570px;
+
+  @include responsive1199 {
+    width: 390px;
+  }
+
+  @include responsive1023 {
+    width: 360px;
+  }
+
+  @include responsive767 {
+    width: 100%;
+  }
+}
+
+.buy-from__line {
+  & + .buy-from__line {
+    border-top: solid 1px #b9b9b9;
+  }
+}
+
+.buy-from__head {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  padding: 20px 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  color: $colorBlack;
+
+  @include responsive1199 {
+    padding: 16px 0;
+  }
+
+  &.active {
+    &::after {
+      transform: scale(-1, -1);
+    }
+  }
+
+  @include after {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='20' height='11' viewBox='0 0 20 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M19 0.880859L9.76153 10.1191L0.523254 0.880859' stroke='%23C6C6C6'/%3e%3c/svg%3e ");
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 18px;
+    height: 18px;
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+  }
+}
+
+.buy-from__body {
+  display: none;
+  padding-bottom: 20px;
+
+  @include responsive1199 {
+    padding-bottom: 16px;
+  }
+}

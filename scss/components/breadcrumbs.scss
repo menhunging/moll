@@ -1,0 +1,82 @@
+.breadcrumbs {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 36px 0;
+  position: relative;
+  z-index: 3;
+
+  @include responsive1549 {
+    padding: 20px 0;
+  }
+
+  .breadcrumbs__list {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    @include responsive767 {
+      display: none;
+    }
+  }
+
+  .breadcrumbs__item {
+    &:last-child {
+      .breadcrumbs__link {
+        color: $colorBlack;
+
+        @include hover {
+          text-decoration-color: transparent;
+
+          &::before {
+            right: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .breadcrumbs__link {
+    color: #c1c1c1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    @include text-decoration-hover(#c1c1c1);
+
+    @include hover {
+      &::before {
+        right: -5px;
+      }
+    }
+
+    @include before {
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='6' height='10' viewBox='0 0 6 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1 1L5 4.99999L1 9' stroke='black' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ");
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 8px;
+      height: 8px;
+      position: relative;
+      transition: all 0.3s;
+      right: 0;
+    }
+  }
+
+  .breadcrumbs__mobile {
+    display: none;
+    font-size: 12px;
+    line-height: 24px;
+    position: relative;
+
+    @include before {
+      position: relative;
+      transform: scale(-1, -1);
+    }
+
+    @include responsive767 {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+  }
+}

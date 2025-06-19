@@ -1,0 +1,61 @@
+.slider-catalog-wrapper {
+  overflow: hidden;
+  width: 100%;
+
+  .slider-catalog-wrapper__head {
+    margin-bottom: 40px;
+
+    @include responsive1549 {
+      margin-bottom: 32px;
+    }
+
+    @include responsive1199 {
+      margin-top: 24px;
+    }
+
+    @include responsive767 {
+      padding-right: 30%;
+      margin-bottom: 16px;
+    }
+  }
+}
+
+.slider-catalog {
+  overflow: visible;
+
+  .swiper-slide {
+    .product {
+      background: linear-gradient(
+        180deg,
+        rgba(236, 236, 236, 0) 0%,
+        #ececec 100%
+      );
+    }
+  }
+
+  .swiper-controls {
+    @include responsive767 {
+      position: absolute;
+      right: 0;
+      top: -70px;
+    }
+
+    @include responsive479{
+      top:-80px;
+    }
+
+    .swiper-pagination {
+      @include responsive767 {
+        display: none;
+      }
+    }
+
+    .swiper-nav {
+      .btnSwiperPrev {
+        @include responsive767 {
+          display: none;
+        }
+      }
+    }
+  }
+}
