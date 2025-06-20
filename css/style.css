@@ -3293,7 +3293,6 @@ h4,
   flex-direction: column;
   justify-content: center;
   padding: 100px;
-  overflow: hidden;
 }
 @media (max-width: 1549px) {
   .collections__col {
@@ -3312,6 +3311,7 @@ h4,
     width: 100%;
     padding: 0 20px 20px;
     text-align: center;
+    overflow: hidden;
   }
 }
 .collections__col .title {
