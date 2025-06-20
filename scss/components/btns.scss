@@ -36,8 +36,12 @@
   @include responsive767 {
   }
 
-  &--orange {
+  &--blue {
+    background-color: $colorBlue;
+    color: $colorWhite;
+
     @include hover {
+      background-color: #0072b3;
     }
   }
 

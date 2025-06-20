@@ -87,3 +87,16 @@
     }
   }
 }
+
+.burger-desktop {
+  @include responsive767 {
+    display: none;
+  }
+}
+
+.burger-mobile {
+  display: none;
+  @include responsive767 {
+    display: flex;
+  }
+}

@@ -253,58 +253,45 @@ section {
     .selectric-scroll ul {
     }
   }
-
-  @include responsive1549 {
-    height: 30px;
-  }
 }
 
 .selectric {
   border: 0;
   background: transparent;
   width: 100%;
-  height: 50px;
+  height: 55px;
   width: 100%;
   border-top: 0;
   border-left: 0;
   border-right: 0;
   border-radius: 0;
 
-  @include responsive1549 {
-    height: 30px;
-  }
-
   .label {
     font-weight: 400;
     height: 100%;
-    padding: 10px 0;
     font-weight: 400;
     font-family: $fontMain;
     font-size: 16px;
-    line-height: 30px;
-    letter-spacing: 0%;
+    line-height: 20px;
     margin: 0;
     color: $colorBlack;
-    border-bottom: solid 1px rgba(159, 159, 159, 1);
-
-    @include responsive1549 {
-      padding: 0;
-      font-size: 12px;
-    }
+    background-color: $colorWhite;
+    border-radius: 10px;
+    border: solid 1px rgba(190, 190, 190, 0.3);
+    padding: 15px 40px 15px 18px;
   }
 
   .button {
-    display: none;
     width: 24px;
     height: 24px;
     background: transparent;
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='15' height='8' viewBox='0 0 15 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1.5 1L7.5 7L13.5 1' stroke='%23222222' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ");
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='19' height='11' viewBox='0 0 19 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1 1L9.5 10L18 1' stroke='%23AAAAAA' stroke-linecap='round'/%3e%3c/svg%3e ");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 12px;
     transition: all 0.3s;
     top: 50%;
-    right: 24px;
+    right: 20px;
     margin-top: -12px;
 
     &::after {
@@ -326,6 +313,7 @@ section {
   min-width: 140px;
   right: 0;
   left: auto;
+  border: solid 1px rgba(190, 190, 190, 0.3);
 }
 
 .selectric-scroll {
