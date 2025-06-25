@@ -319,6 +319,18 @@ $(document).ready(function () {
     });
   }
 
+  if ($(".grettings-main__slider").length > 0) {
+    if ($(window).width() < 1024) {
+      const grettingsSlider = new Swiper(".grettings-main__slider", {
+        slidesPerView: 1,
+        spaceBetween: 24,
+        pagination: {
+          el: ".swiper-pagination",
+        },
+      });
+    }
+  }
+
   // /sliders
 });
 
