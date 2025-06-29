@@ -20,6 +20,7 @@
   }
 }
 
+.slider-catalog--v2,
 .slider-catalog {
   overflow: visible;
 
@@ -40,8 +41,8 @@
       top: -70px;
     }
 
-    @include responsive479{
-      top:-80px;
+    @include responsive479 {
+      top: -70px;
     }
 
     .swiper-pagination {

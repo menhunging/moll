@@ -11,14 +11,18 @@ h6,
 
 h1,
 .caption--h1 {
-  font-size: 48px;
-  line-height: 50px;
+  font-size: 70px;
+  line-height: 72px;
   font-weight: 700;
 
   @include responsive1549 {
+    font-size: 48px;
+    line-height: 50px;
   }
 
   @include responsive1199 {
+    font-size: 40px;
+    line-height: 42px;
   }
 
   @include responsive1023 {
@@ -65,8 +69,8 @@ h3,
   }
 
   @include responsive767 {
-    font-size: 24px;
-    line-height: 26px;
+    font-size: 20px;
+    line-height: 24px;
   }
 
   @include responsive639 {

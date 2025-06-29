@@ -107,7 +107,7 @@
     transition: transform 0.3s;
 
     @include hover {
-      transform: scale(0.9);
+      transform: translateY(-50%) scale(0.9);
     }
   }
 }

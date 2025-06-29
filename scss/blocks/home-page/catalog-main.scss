@@ -1,0 +1,88 @@
+.catalog-main {
+  background-color: #ebebeb;
+
+  @include responsive767 {
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  .catalog-main__title {
+    margin-bottom: 50px;
+
+    @include responsive1549 {
+      margin-bottom: 32px;
+    }
+  }
+
+  .catalog-main__head {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 732px;
+    width: 100%;
+
+    @include responsive1549 {
+      max-width: 655px;
+    }
+
+    .caption {
+      color: $colorBlue;
+    }
+  }
+
+  .catalog-main__body {
+    margin-top: 40px;
+
+    @include responsive767 {
+      margin-top: 24px;
+    }
+
+    .catalog__list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+
+      @include responsive1549 {
+        gap: 16px;
+      }
+
+      @include responsive767 {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  }
+}
+
+.catalog-main__controls {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include responsive767 {
+    margin-top: 24px;
+  }
+
+  .btn {
+    padding: 15px 30px;
+    width: auto;
+    height: auto;
+    font-size: 20px;
+
+    @include responsive767 {
+      font-size: 16px;
+      line-height: 18px;
+      padding: 10px 20px;
+    }
+  }
+}
+
+.catalog-main__section {
+  & + .catalog-main__section {
+    margin-top: 80px;
+
+    @include responsive767 {
+      margin-top: 32px;
+    }
+  }
+}

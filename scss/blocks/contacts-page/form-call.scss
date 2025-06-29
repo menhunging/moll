@@ -1,0 +1,183 @@
+.form-call {
+  color: #747474;
+
+  .form-call__inner {
+    background-color: $colorWhite;
+    border-radius: 20px;
+    display: flex;
+    overflow: hidden;
+    min-height: 556px;
+
+    @include responsive1549 {
+      min-height: 475px;
+    }
+
+    @include responsive767 {
+      flex-direction: column;
+    }
+  }
+
+  .picture-block {
+    width: 50%;
+
+    @include responsive1199 {
+      width: 45%;
+    }
+
+    @include responsive767 {
+      width: 100%;
+      height: auto;
+      padding-top: calc(254 / 358 * 100%);
+    }
+  }
+
+  .form-call__form {
+    width: 50%;
+    padding: 40px;
+
+    @include responsive1549 {
+      padding: 24px 40px;
+    }
+
+    @include responsive1199 {
+      width: 55%;
+      padding: 24px;
+    }
+
+    @include responsive767 {
+      width: 100%;
+      padding: 24px 16px;
+    }
+  }
+
+  .caption {
+    color: $colorBlack;
+    margin-bottom: 32px;
+
+    @include responsive1549 {
+      margin-bottom: 24px;
+    }
+
+    @include responsive767 {
+      font-size: 24px;
+      line-height: 26px;
+    }
+  }
+
+  .input-item {
+    input {
+      border: solid 1px #747474;
+      border-radius: 20px;
+      color: #747474;
+      text-transform: none;
+      font-size: 16px;
+      line-height: 18px;
+      padding: 0 24px;
+
+      &::placeholder {
+        font-size: 16px;
+        line-height: 18px;
+        text-transform: none;
+      }
+    }
+
+    & + .input-item {
+      margin-top: 16px;
+    }
+  }
+
+  .desc {
+    margin-top: 24px;
+    margin-bottom: 24px;
+    display: block;
+
+    @include responsive767 {
+      font-size: 12px;
+      line-height: 14px;
+      margin: 16px 0;
+    }
+  }
+
+  .check-block {
+    & + .check-block {
+      margin-top: 12px;
+    }
+  }
+
+  .btn {
+    margin-top: 24px;
+  }
+}
+
+.form-call__result {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: $colorBlack;
+  max-width: 390px;
+  margin: 0 auto;
+
+  @include responsive1199 {
+    max-width: 320px;
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  @include responsive767 {
+    padding: 60px 0;
+  }
+
+  .icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='35' height='27' viewBox='0 0 35 27' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0.591797 14.4742L4.57484 10.4409L12.6916 18.4238L30.2472 0.93512L34.2637 4.96833L12.6916 26.4568L0.591797 14.4742Z' fill='white'/%3e%3c/svg%3e ");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: $colorBlue;
+    margin-bottom: 24px;
+
+    @include responsive767 {
+      width: 38px;
+      height: 38px;
+      background-size: 60%;
+    }
+  }
+
+  .caption {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 34px;
+    text-align: center;
+
+    @include responsive1549 {
+      font-size: 24px;
+      line-height: 26px;
+      margin-bottom: 16px;
+    }
+  }
+
+  .title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 26px;
+    text-align: center;
+    margin-bottom: 32px;
+
+    @include responsive1549 {
+      font-size: 20px;
+      line-height: 22px;
+      margin-bottom: 24px;
+    }
+
+    @include responsive767 {
+      font-size: 18px;
+      line-height: 20px;
+    }
+  }
+}

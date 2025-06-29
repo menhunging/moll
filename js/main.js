@@ -135,8 +135,8 @@ $(document).ready(function () {
     });
   }
 
-  if ($(".video-section").length > 0) {
-    $(".video-section .play").on("click", function () {
+  if ($(".video-block").length > 0) {
+    $(".video-block .play").on("click", function () {
       const play = $(this);
       const video = play.siblings("video").get(0);
 
@@ -236,6 +236,16 @@ $(document).ready(function () {
     });
   }
 
+  if ($("[data-btn-disabled]").length > 0) {
+    $("[data-btn-disabled]").on("click", function () {
+      const formBlock = $(this).parents("form");
+      const btn = formBlock.find("[data-for-disabled]");
+      const isDisabled = btn.prop("disabled");
+
+      btn.prop("disabled", !isDisabled);
+    });
+  }
+
   // sliders
 
   if ($(".slider-catalog").length > 0) {
@@ -281,6 +291,62 @@ $(document).ready(function () {
               },
               1550: {
                 slidesPerView: 4,
+                spaceBetween: 24,
+              },
+            },
+          });
+        } else {
+          return;
+        }
+      });
+    }
+
+    sliders.length && sliderinit();
+  }
+
+  if ($(".slider-catalog--v2").length > 0) {
+    const sliders = document.querySelectorAll(".slider-catalog--v2");
+    let mySwipers = [];
+
+    function sliderinit() {
+      sliders.forEach((slider, index) => {
+        let navNext = undefined;
+        let navPrev = undefined;
+
+        if (!slider.swiper) {
+          navNext = $(slider).find(".btnSwiperNext")[0];
+          navPrev = $(slider).find(".btnSwiperPrev")[0];
+
+          mySwipers[index] = new Swiper(slider, {
+            slidesPerView: 3,
+            spaceBetween: 24,
+            navigation: {
+              nextEl: navNext && navNext,
+              prevEl: navPrev && navPrev,
+            },
+            pagination: {
+              el: $(slider).find(".swiper-pagination")[0],
+              type: "bullets",
+            },
+            breakpoints: {
+              0: {
+                slidesPerView: 1.25,
+                spaceBetween: 12,
+              },
+              768: {
+                slidesPerView: 3,
+                spaceBetween: 12,
+              },
+              1024: {
+                slidesPerView: 3,
+                spaceBetween: 16,
+              },
+              1200: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+              },
+              1550: {
+                slidesPerView: 3,
                 spaceBetween: 24,
               },
             },

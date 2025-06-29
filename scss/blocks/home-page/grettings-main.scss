@@ -1,10 +1,12 @@
 .grettings-main {
   padding-top: 0;
+  overflow: hidden;
 
   .grettings-main__list {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 24px;
+    overflow: visible;
 
     @include responsive1023 {
       display: flex;
@@ -24,10 +26,11 @@
     padding: 40px;
     overflow: hidden;
     @include invisLink;
+    transition: all 0.3s;
 
     @include before {
       width: 100%;
-      height: 50%;
+      height: 70%;
       background: linear-gradient(
         180deg,
         rgba(255, 255, 255, 0) 0%,
@@ -36,6 +39,12 @@
       bottom: 0;
       left: 0;
       z-index: 1;
+      opacity: 0;
+      pointer-events: none;
+
+      @include responsive1023 {
+        opacity: 1;
+      }
     }
 
     @include responsive1549 {
@@ -48,13 +57,14 @@
 
     @include responsive1199 {
       height: 269px;
+      padding: 30px;
     }
 
     @include responsive1023 {
       height: 462px;
       justify-content: flex-end;
       align-items: flex-end;
-      padding: 35px;
+      padding: 20px;
     }
 
     &:first-child {
@@ -80,6 +90,18 @@
         align-items: flex-end;
       }
 
+      .grettings-main__content {
+        max-width: 425px;
+
+        @include responsive1199 {
+          max-width: 335px;
+        }
+
+        @include responsive1023 {
+          max-width: 100%;
+        }
+      }
+
       .grettings-main__name {
         font-size: 64px;
         line-height: 66px;
@@ -96,8 +118,14 @@
     }
 
     @include hover {
+      box-shadow: 10px 15px 10px $colorBlack-a3;
+
       .picture-block {
         transform: scale(1.05);
+      }
+
+      .grettings-main__name {
+        transform: scale(1.15) translate(12px, -10px);
       }
     }
   }
@@ -105,29 +133,59 @@
   .grettings-main__content {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
     width: 100%;
+    position: relative;
+    gap: 25px;
+    width: 100%;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 23px;
+    max-width: 278px;
+
+    @include responsive1439 {
+      font-size: 14px;
+      line-height: 20px;
+      max-width: 218px;
+    }
+
+    @include responsive1199 {
+      gap: 15px;
+      line-height: 18px;
+    }
 
     @include responsive1023 {
       justify-content: center;
       align-items: center;
-      z-index: 3;
+      max-width: 100%;
+      text-align: center;
+      z-index: 5;
+    }
+
+    .btn {
+      padding: 14px 25px;
+      width: auto;
+      position: relative;
+      z-index: 8;
+      font-size: 16px;
+
+      @include responsive1023 {
+        padding: 10px 20px;
+        height: auto;
+        min-width: initial;
+      }
     }
   }
 
   .grettings-main__name {
     font-size: 46px;
     line-height: 48px;
+    transition: transform 0.3s;
 
     @include responsive1439 {
       font-size: 38px;
       line-height: 40px;
-    }
-
-    @include responsive1199 {
-      font-size: 32px;
-      line-height: 34px;
     }
   }
 
@@ -140,6 +198,10 @@
     transition: transform 0.3s;
     z-index: -1;
     mix-blend-mode: multiply;
+
+    @include responsive1439 {
+      right: -110px;
+    }
 
     @include responsive1023 {
       right: 20px;
@@ -169,5 +231,12 @@
     .swiper-pagination-bullet-active {
       background-color: $colorBlue;
     }
+  }
+}
+
+.grettings-main__slider {
+  overflow: visible;
+
+  @include responsive1023 {
   }
 }

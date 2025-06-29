@@ -31,6 +31,8 @@
   }
 
   @include responsive1023 {
+    font-size: 16px;
+    line-height: 18px;
   }
 
   @include responsive767 {
@@ -42,6 +44,35 @@
 
     @include hover {
       background-color: #0072b3;
+    }
+  }
+
+  &--dark {
+    background-color: #3b3b3b;
+    color: $colorWhite;
+
+    @include hover {
+      background-color: #686868;
+    }
+  }
+
+  &--borderBlue {
+    border: solid 1px $colorBlue;
+    color: $colorBlue;
+
+    @include hover {
+      background-color: $colorBlue;
+      color: $colorWhite;
+    }
+  }
+
+  &--borderGray {
+    color: #777;
+    border: solid 1px #777;
+
+    @include hover {
+      background-color: #777;
+      color: $colorWhite;
     }
   }
 

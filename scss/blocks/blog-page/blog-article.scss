@@ -1,0 +1,292 @@
+.article {
+  padding: 0;
+  overflow: hidden;
+
+  .article-line {
+  }
+
+  .article-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 80px 0;
+    position: relative;
+
+    @include responsive1439 {
+      padding: 40px 0;
+    }
+
+    @include responsive767 {
+      flex-direction: column;
+    }
+
+    &:first-child {
+      padding-top: 0;
+      padding-bottom: 40px;
+    }
+
+    &:nth-child(2n) {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+
+      @include responsive767 {
+        flex-direction: column;
+      }
+
+      .article-item__content {
+        width: 700px;
+
+        @include responsive767 {
+          width: 100%;
+        }
+      }
+
+      @include before {
+        background-color: #f1f1f1;
+        width: 3000%;
+        left: -1000%;
+        top: 0;
+        height: 100%;
+        z-index: -1;
+      }
+    }
+  }
+
+  .article-item__content {
+    width: 580px;
+    display: flex;
+    flex-direction: column;
+
+    gap: 40px;
+
+    @include responsive1549 {
+      gap: 20px;
+    }
+
+    @include responsive767 {
+      width: 100%;
+      gap: 24px;
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    .caption {
+      &.caption--h2 {
+        margin-bottom: 30px;
+
+        @include responsive1549 {
+          margin-bottom: 20px;
+        }
+
+        @include responsive1199 {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .picture-block {
+    width: 710px;
+    height: 510px;
+    border-radius: 20px;
+    overflow: hidden;
+
+    @include responsive1549 {
+      width: 580px;
+      height: 340px;
+    }
+
+    @include responsive1199 {
+      width: 335px;
+      height: 262px;
+    }
+
+    @include responsive767 {
+      width: 100%;
+      padding-top: calc(250 / 358 * 100%);
+      height: auto;
+    }
+
+    img {
+      object-fit: contain;
+
+      @include responsive767 {
+        object-fit: cover;
+      }
+    }
+  }
+
+  ol {
+    position: relative;
+
+    li {
+      display: block;
+      position: relative;
+      padding-left: 15px;
+
+      @include before {
+        display: block;
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background-color: $colorBlack;
+        top: 7px;
+        left: 0;
+      }
+    }
+  }
+
+  ul {
+    position: relative;
+    list-style-type: decimal;
+
+    li {
+      min-height: 23px;
+
+      & + li {
+        margin-top: 9px;
+      }
+
+      &::marker {
+        font-size: 20px;
+
+        @include responsive767 {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  a {
+    text-decoration: underline;
+    color: $colorBlue;
+
+    @include hover {
+      text-decoration-color: transparent;
+    }
+  }
+
+  .video-block {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.article-item__media {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  width: 100%;
+
+  @include responsive767 {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .picture-block {
+    width: 706px;
+    height: 367px;
+    position: relative;
+    margin-bottom: 47px;
+    overflow: visible;
+
+    @include responsive1549 {
+      width: 645px;
+      height: 336px;
+    }
+
+    @include responsive1439 {
+      width: 532px;
+      height: 276px;
+    }
+
+    @include responsive1199 {
+      height: 211px;
+      width: 406px;
+      margin-bottom: 30px;
+    }
+
+    @include responsive767 {
+      margin-bottom: 50px;
+      width: 100%;
+      height: auto;
+      padding-top: calc(186 / 358 * 100%);
+    }
+
+    picture {
+      overflow: hidden;
+      border-radius: 20px;
+    }
+
+    @include after {
+      content: attr(data-title);
+      display: block;
+      top: calc(100% + 24px);
+      left: 0;
+      display: -webkit-box;
+      overflow: hidden;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
+      white-space: nowrap;
+
+      @include responsive1199 {
+        top: calc(100% + 16px);
+      }
+
+      @include responsive767 {
+        top: calc(100% + 12px);
+        font-size: 12px;
+        line-height: 14px;
+      }
+    }
+
+    img {
+      object-fit: cover;
+    }
+  }
+}
+
+.article-item__text {
+  display: flex;
+  align-items: center;
+  gap: 125px;
+
+  @include responsive1439 {
+    gap: 80px;
+  }
+
+  @include responsive1199 {
+    width: 100%;
+    gap: 20px;
+  }
+
+  @include responsive767 {
+    flex-direction: column;
+  }
+
+  p {
+    width: 50%;
+
+    @include responsive767 {
+      width: 100%;
+    }
+  }
+
+  .adv-col__ul {
+    width: 50%;
+    margin: 0;
+
+    p {
+      width: 100%;
+    }
+
+    @include responsive767 {
+      width: 100%;
+      margin: 0;
+    }
+  }
+}

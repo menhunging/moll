@@ -17,6 +17,8 @@
 
 // HOME PAGE
 @import "blocks/home-page/grettings-main.scss";
+@import "blocks/home-page/furniture-section.scss";
+@import "blocks/home-page/catalog-main.scss";
 
 // CATALOG PAGE
 @import "blocks/catalog-page/product.scss";
@@ -28,6 +30,15 @@
 
 // PRODUCT PAGE
 @import "blocks/product-page/product-section.scss";
+
+// BLOG PAGE
+@import "blocks/blog-page/blog.scss";
+@import "blocks/blog-page/blog-article.scss";
+@import "blocks/blog-page/article-more.scss";
+
+// CONTACTS PAGE
+@import "blocks/contacts-page/contacts.scss";
+@import "blocks/contacts-page/form-call.scss";
 
 // BLOCKS
 @import "blocks";
