@@ -246,6 +246,13 @@ $(document).ready(function () {
     });
   }
 
+  if ($(".filter-btn").length > 0) {
+    $(".filter-btn").on("click", function () {
+      $(this).toggleClass("active");
+      $(".filter-content").stop().slideToggle();
+    });
+  }
+
   // sliders
 
   if ($(".slider-catalog").length > 0) {

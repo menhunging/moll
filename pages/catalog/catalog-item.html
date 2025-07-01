@@ -23,7 +23,7 @@
     <link rel="stylesheet" type="text/css" href="../../css/style.css" />
 </head>
 
-<body class="index-page">
+<body>
 
     <div class="site-wrapper">
         <header class="header">
@@ -228,9 +228,305 @@
                 </div>
             </section>
 
-            <section>
+            <section class="filter-section">
                 <div class="container">
-                    ФИЛЬТР
+                    <div class="filter">
+                        <div class="filter-btn">
+                            <span class="filter-btn__icon"></span>
+                            <span class="filter-btn__text">ФИЛЬТР</span>
+                        </div>
+
+                        <div class="filterCheckList">
+                            <div class="filterCheck">
+                                <input type="checkbox" id="ch1">
+                                <label for="ch1">Все</label>
+                            </div>
+                            <div class="filterCheck">
+                                <input type="checkbox" id="ch2">
+                                <label for="ch2">В наличии</label>
+                            </div>
+                            <div class="filterCheck">
+                                <input type="checkbox" id="ch3">
+                                <label for="ch3">Под заказ</label>
+                            </div>
+                            <div class="filterCheck">
+                                <input type="checkbox" id="ch4">
+                                <label for="ch4">В транзите</label>
+                            </div>
+                            <div class="filterCheck">
+                                <input type="checkbox" id="ch5">
+                                <label for="ch5">Распродажа</label>
+                            </div>
+                        </div>
+
+                        <div class="filter-sort">
+                            <span class="filter-sort__text">Цена по возрастанию</span>
+                            <span class="filter-sort__icon"></span>
+
+                            <ul class="filter-sort__list">
+                                <li><a href="#" class="filter-sort__link">Цена по убыванию</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="filter-content">
+                            <div class="filter-content__inner">
+                                <div class="filter-col">
+                                    <div class="filter-line">
+                                        <div class="filter-line__head">
+                                            <span class="filter-line__title">Цена:</span>
+                                        </div>
+                                        <div class="filter-line__body">
+                                            <input type="text" class="range" />
+                                        </div>
+                                    </div>
+                                    <div class="filter-line">
+                                        <div class="filter-line__head">
+                                            <span class="filter-line__title">Цвета:</span>
+                                        </div>
+                                        <div class="filter-line__body">
+                                            <div class="circleColorList">
+                                                <a href="#" class="circleColor active"
+                                                    style="background-color: #4766FF"></a>
+                                                <a href="#" class="circleColor circleColor--WHITE active"
+                                                    style="background-color: #fff;border-color:#e9e9e9"></a>
+                                                <a href="#" class="circleColor" style="background-color: #A8A8A8"></a>
+                                                <a href="#" class="circleColor" style="background-color: #FFB800"></a>
+                                                <a href="#" class="circleColor" style="background-color: #BE5A69"></a>
+                                                <a href="#" class="circleColor" style="background-color: #9747FF"></a>
+                                                <a href="#" class="circleColor" style="background-color: #3AAD28"></a>
+                                                <a href="#" class="circleColor" style="background-color: #FF8A00"></a>
+                                                <a href="#" class="circleColor" style="background-color: #FFB800"></a>
+                                                <a href="#" class="circleColor" style="background-color: #BE5A69"></a>
+                                                <a href="#" class="circleColor" style="background-color: #FF7247"></a>
+                                                <a href="#" class="circleColor" style="background-color: #A92D2D"></a>
+                                                <a href="#" class="circleColor" style="background-color: #4766FF"></a>
+                                                <a href="#" class="circleColor" style="background-color: #E10074"></a>
+                                                <a href="#" class="circleColor" style="background-color: #FFB6B6"></a>
+                                                <a href="#" class="circleColor" style="background-color: #FFD873"></a>
+                                                <a href="#" class="circleColor" style="background-color: #FF0329"></a>
+                                                <a href="#" class="circleColor" style="background-color: #6B1D1D"></a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="filter-col">
+                                    <div class="filter-line">
+                                        <div class="filter-line__head">
+                                            <span class="filter-line__title">Ширина столешницы (см):</span>
+                                        </div>
+                                        <div class="filter-line__body">
+                                            <div class="filterCheckHorizontal">
+                                                <div class="filterCheck">
+                                                    <input type="checkbox" id="s1">
+                                                    <label for="s1">90</label>
+                                                </div>
+                                                <div class="filterCheck">
+                                                    <input type="checkbox" id="s2">
+                                                    <label for="s2">120</label>
+                                                </div>
+                                                <div class="filterCheck">
+                                                    <input type="checkbox" id="s3">
+                                                    <label for="s3">150</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="filter-line">
+                                        <div class="filter-line__head">
+                                            <span class="filter-line__title">Глубина столешницы (см):</span>
+                                        </div>
+                                        <div class="filter-line__body">
+                                            <div class="filterCheckHorizontal">
+                                                <div class="filterCheck">
+                                                    <input type="checkbox" id="g1">
+                                                    <label for="g1">75</label>
+                                                </div>
+                                                <div class="filterCheck">
+                                                    <input type="checkbox" id="g2">
+                                                    <label for="g2">68</label>
+                                                </div>
+                                                <div class="filterCheck">
+                                                    <input type="checkbox" id="g3">
+                                                    <label for="g3">72</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="filter-line">
+                                        <div class="filter-line__head">
+                                            <span class="filter-line__title">Высота (см):</span>
+                                        </div>
+                                        <div class="filter-line__body">
+                                            <div class="filterCheckHorizontal">
+                                                <div class="filterCheck">
+                                                    <input type="checkbox" id="v1">
+                                                    <label for="v1">75</label>
+                                                </div>
+                                                <div class="filterCheck">
+                                                    <input type="checkbox" id="v2">
+                                                    <label for="v2">68</label>
+                                                </div>
+                                                <div class="filterCheck">
+                                                    <input type="checkbox" id="v3">
+                                                    <label for="v3">72</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="filter-col">
+                                    <div class="filter-line">
+                                        <div class="filter-line__head">
+                                            <span class="filter-line__title">Коллекция:</span>
+                                        </div>
+                                        <div class="filter-line__body">
+                                            <div class="filterCheckVertical">
+                                                <div class="filterCheck">
+                                                    <input type="checkbox" id="k1">
+                                                    <label for="k1">Easy</label>
+                                                </div>
+                                                <div class="filterCheck">
+                                                    <input type="checkbox" id="k2">
+                                                    <label for="k2">Prime</label>
+                                                </div>
+                                                <div class="filterCheck">
+                                                    <input type="checkbox" id="k3">
+                                                    <label for="k3">Unique</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="filter-col">
+                                    <div class="filter-line">
+                                        <div class="filter-line__head">
+                                            <span class="filter-line__title">Система подъема:</span>
+                                        </div>
+                                        <div class="filter-line__body">
+                                            <div class="filterCheckVertical">
+                                                <div class="filterCheck">
+                                                    <input type="checkbox" id="p1">
+                                                    <label for="p1">Electro</label>
+                                                </div>
+                                                <div class="filterCheck">
+                                                    <input type="checkbox" id="p2">
+                                                    <label for="p2">Classic</label>
+                                                </div>
+                                                <div class="filterCheck">
+                                                    <input type="checkbox" id="p3">
+                                                    <label for="p3">Comfort</label>
+                                                </div>
+                                                <div class="filterCheck">
+                                                    <input type="checkbox" id="p4">
+                                                    <label for="p4">Express</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="filter-line">
+                                        <div class="filter-line__head">
+                                            <span class="filter-line__title">Наклон столешницы:</span>
+                                        </div>
+                                        <div class="filter-line__body">
+                                            <div class="filterCheckVertical">
+                                                <div class="filterCheck">
+                                                    <input type="checkbox" id="n1">
+                                                    <label for="n1">Есть</label>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="filter-col">
+                                    <div class="filter-line">
+                                        <div class="filter-line__head">
+                                            <span class="filter-line__title">Назначение:</span>
+                                        </div>
+                                        <div class="filter-line__body">
+                                            <div class="filterCheckVertical">
+                                                <div class="filterCheck">
+                                                    <input type="checkbox" id="w1">
+                                                    <label for="w1">Для работы стоя</label>
+                                                </div>
+                                                <div class="filterCheck">
+                                                    <input type="checkbox" id="w2">
+                                                    <label for="w2">Для самых маленьких</label>
+                                                </div>
+                                                <div class="filterCheck">
+                                                    <input type="checkbox" id="w3">
+                                                    <label for="w3">Домашний офис</label>
+                                                </div>
+                                                <div class="filterCheck">
+                                                    <input type="checkbox" id="w4">
+                                                    <label for="w4">Детская мебель </label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="filter-controls">
+                                    <a href="#" class="btn btn--borderGray">Сбросить все фильтры</a>
+                                    <a href="#" class="btn btn--dark">Применить</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="filter-selected">
+                            <span class="filter-selected__title">Выбрано:</span>
+
+                            <ul class="filter-selected__list">
+                                <li class="filter-selected__item">
+                                    <span class="filter-selected__text">Ширина: 90 см</span>
+                                    <span class="filter-selected__delete"></span>
+                                </li>
+
+                                <li class="filter-selected__item">
+                                    <span class="filter-selected__text">Unique</span>
+                                    <span class="filter-selected__delete"></span>
+                                </li>
+
+                                <li class="filter-selected__item">
+                                    <span class="filter-selected__text">Electro</span>
+                                    <span class="filter-selected__delete"></span>
+                                </li>
+
+                                <li class="filter-selected__item">
+                                    <span class="filter-selected__text">0-100,000Р</span>
+                                    <span class="filter-selected__delete"></span>
+                                </li>
+
+                                <li class="filter-selected__item">
+                                    <span class="circleColor" style="background-color: #9747FF"></span>
+                                    <span class="filter-selected__delete"></span>
+                                </li>
+
+                                <li class="filter-selected__item">
+                                    <span class="circleColor" style="background-color: #4766FF"></span>
+                                    <span class="filter-selected__delete"></span>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
                 </div>
             </section>
 
