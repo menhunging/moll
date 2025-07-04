@@ -1,0 +1,120 @@
+.instructions {
+  padding-top: 40px;
+
+  @include responsive767 {
+    padding-top: 32px;
+  }
+}
+
+.instructions-section {
+  .caption {
+    color: $colorBlue;
+    margin-bottom: 40px;
+
+    @include responsive1549 {
+      margin-bottom: 32px;
+    }
+
+    @include responsive1199 {
+      margin-bottom: 24px;
+    }
+  }
+
+  & + .instructions-section {
+    margin-top: 64px;
+
+    @include responsive1199 {
+      margin-top: 48px;
+    }
+  }
+}
+
+.instructions__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+
+  @include responsive1023 {
+    gap: 16px;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.instructions__item {
+  background-color: #f7f7f7;
+  border-radius: 20px;
+  transition: transform 0.3s;
+  position: relative;
+
+  @include hover {
+    transform: scale(0.95);
+  }
+
+  .picture-block {
+    min-width: 77px;
+    width: 77px;
+    height: 77px;
+    position: relative;
+
+    @include responsive1549 {
+      width: 65px;
+      height: 65px;
+      min-width: 65px;
+    }
+
+    @include responsive1199 {
+      width: 42px;
+      height: 42px;
+      min-width: 42px;
+    }
+
+    @include responsive1199 {
+      width: 30px;
+      height: 30px;
+      min-width: 30px;
+    }
+
+    img {
+      object-fit: contain;
+    }
+  }
+}
+
+.instructions__link {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  gap: 32px;
+  padding: 11px 24px;
+
+  @include responsive1199 {
+    gap: 18px;
+  }
+
+  @include responsive767 {
+    gap: 8px;
+    padding: 5px 8px;
+  }
+}
+
+.instructions__name {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 26px;
+
+  @include responsive1549 {
+    font-size: 20px;
+    line-height: 22px;
+  }
+
+  @include responsive1199 {
+    font-size: 16px;
+    line-height: 18px;
+  }
+
+  @include responsive767 {
+    font-size: 12px;
+    line-height: 14px;
+  }
+}

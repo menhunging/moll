@@ -6,6 +6,7 @@
   height: 15px;
   margin: 0;
   transition: transform 0.3s;
+  z-index: 6;
 
   @include responsive1023 {
     margin-right: -6px;

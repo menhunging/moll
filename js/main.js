@@ -253,6 +253,130 @@ $(document).ready(function () {
     });
   }
 
+  if ($(".rangeInput").length > 0) {
+    const range = $(".rangeInput");
+    const rangeMin = 0;
+    const rangeMax = 100000;
+    const rangeFrom = 0;
+
+    const inputMin = $(".rangeInputs__min");
+    const inputMax = $(".rangeInputs__max");
+
+    range.ionRangeSlider({
+      type: "double",
+      min: rangeMin,
+      max: rangeMax,
+      from: rangeFrom,
+      hide_from_to: true,
+      step: 1,
+
+      onStart: function (data) {
+        inputMin.val(data.from);
+        inputMax.val(data.to);
+      },
+
+      onChange: function (data) {
+        inputMin.val(data.from);
+        inputMax.val(data.to);
+      },
+    });
+
+    const sliderInstance = range.data("ionRangeSlider");
+
+    inputMin.on("input", function () {
+      let val = parseInt($(this).val(), 10);
+
+      if (val < rangeMin || isNaN(val)) {
+        val = rangeMin;
+      }
+
+      if (val > parseInt(inputMax.val(), 10)) {
+        val = parseInt(inputMax.val(), 10);
+      }
+
+      sliderInstance.update({ from: val });
+    });
+
+    inputMax.on("input", function () {
+      let val = parseInt($(this).val(), 10);
+
+      if (val > rangeMax || isNaN(val)) {
+        val = rangeMax;
+      }
+
+      if (val < parseInt(inputMin.val(), 10)) {
+        val = parseInt(inputMin.val(), 10);
+      }
+
+      sliderInstance.update({ to: val });
+    });
+  }
+
+  if ($(".filter").length > 0) {
+    handeFilterMobile();
+
+    $(window).resize(function () {
+      handeFilterMobile();
+    });
+
+    function handeFilterMobile() {
+      if ($(window).width() < 768) {
+        initFilterMobile();
+      } else {
+        destroyFilterMobile();
+      }
+    }
+
+    function initFilterMobile() {
+      if (!$(".filter").hasClass("init-mobile")) {
+        $(".filter-line__head").on("click", function () {
+          $(this)
+            .toggleClass("opened")
+            .next(".filter-line__body ")
+            .stop()
+            .slideToggle();
+        });
+
+        $(".filter").addClass("init-mobile");
+      }
+    }
+
+    function destroyFilterMobile() {
+      if ($(".filter").hasClass("init-mobile")) {
+        $(".filter-line__head").off("click");
+        $(".filter").removeClass("init-mobile");
+        $(".filter-line__head").removeClass("opened");
+        $(".filter-line__body").removeAttr("style");
+      }
+    }
+  }
+
+  if ($(".menu").length > 0) {
+    $(".menu-link").on("click", function (e) {
+      e.preventDefault();
+
+      const currentLink = $(this);
+      const menuCurrentSub = currentLink.next(".menu-sub");
+
+      $(".menu-link")
+        .not(currentLink)
+        .each(function () {
+          const otherLink = $(this);
+          const otherSub = otherLink.next(".menu-sub");
+
+          otherLink.removeClass("opened");
+          otherSub.stop(true, true).stop().slideUp();
+        });
+
+      currentLink.toggleClass("opened");
+      menuCurrentSub.stop(true, true).stop().slideToggle();
+    });
+
+    $(".menu-sub__close").on("click", function () {
+      $(".menu-sub").stop().slideUp();
+    });
+  }
+
   // sliders
 
   if ($(".slider-catalog").length > 0) {

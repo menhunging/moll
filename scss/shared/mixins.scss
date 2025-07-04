@@ -47,7 +47,7 @@
   text-decoration-color: transparent;
   transition: text-decoration 0.3s;
 
-  &:hover {
+  @include hover {
     text-decoration-color: $color;
   }
 }
