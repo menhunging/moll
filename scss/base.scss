@@ -1025,3 +1025,167 @@ section {
   display: none !important;
   pointer-events: none;
 }
+
+.search-invis-result {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+  position: fixed;
+  top: 150px;
+  right: 150px;
+  background-color: $colorWhite;
+  box-shadow: 0px 0px 8px 0px #00000029;
+  border-radius: 20px;
+  z-index: 9;
+  overflow: hidden;
+  padding: 24px 32px;
+  width: 476px;
+
+  @include responsive1199 {
+    padding: 16px;
+  }
+
+  @include responsive767 {
+    right: 16px;
+    width: calc(100% - 32px);
+    top: 100px;
+  }
+
+  .search-invis-result__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @include responsive1199 {
+      gap: 16px;
+    }
+  }
+
+  .search-invis-result__title {
+    display: block;
+    width: 100%;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 100%;
+
+    @include responsive1199 {
+      font-size: 20px;
+      line-height: 22px;
+    }
+  }
+
+  .picture-block {
+  }
+
+  .search-invis-result__name {
+  }
+
+  .search-invis-result__link-all {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    color: $colorBlue;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+
+    @include responsive1199 {
+      font-size: 14px;
+    }
+
+    @include hover {
+      text-decoration-color: $colorBlue;
+    }
+
+    @include after {
+      position: relative;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='7' height='12' viewBox='0 0 7 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1 1L6 5.99999L1 11' stroke='%230090E2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 5px;
+      height: 10px;
+    }
+  }
+
+  ul {
+    li {
+      min-height: 40px;
+
+      a {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 21px;
+        text-decoration: underline;
+        text-decoration-color: transparent;
+        transition: all 0.3s;
+
+        @include responsive1199 {
+          font-size: 14px;
+        }
+
+        @include hover {
+          text-decoration-color: $colorBlack;
+        }
+      }
+    }
+  }
+
+  .picture-block {
+    width: 40px;
+    height: 40px;
+    position: relative;
+  }
+
+  .search-invis-result__cat {
+    margin-top: 24px;
+
+    ul {
+      margin-top: 24px;
+
+      li {
+        min-height: 30px;
+      }
+    }
+  }
+}
+
+.search-result-empty {
+  padding: 60px 0;
+
+  @include responsive1199 {
+    padding: 40px 0;
+  }
+
+  @include responsive767 {
+    padding: 30px 0;
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    list-style-type: disc;
+
+    li{
+    }
+  }
+
+  a {
+    text-decoration: underline;
+    transition: text-decoration 0.3s;
+
+    @include hover {
+      text-decoration-color: transparent;
+    }
+  }
+}

@@ -1,0 +1,213 @@
+.foto-section {
+  overflow: hidden;
+
+  .foto-slider-big {
+    width: 1120px;
+    overflow: visible;
+
+    @include responsive1549 {
+      width: 900px;
+    }
+
+    @include responsive1199 {
+      width: 632px;
+    }
+
+    @include responsive767 {
+      width: 100%;
+    }
+
+    .swiper-slide {
+      opacity: 0.2;
+      transition: all 0.3s;
+      pointer-events: none;
+
+      &.swiper-slide-active {
+        opacity: 1;
+        pointer-events: initial;
+
+        .foto-slider-big__controls {
+          opacity: 1;
+          pointer-events: initial;
+        }
+      }
+    }
+
+    .btnSwiper {
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 43px;
+      height: 43px;
+      box-shadow: 0px 0px 16px 0px #0000006b;
+      background-color: $colorWhite;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translateY(calc(-50% - 50px));
+      z-index: 5;
+      cursor: pointer;
+      transition: all 0.3s;
+
+      @include responsive767 {
+        transform: translateY(-50%);
+      }
+
+      &.swiper-button-disabled {
+        opacity: 0.33;
+        pointer-events: none;
+      }
+
+      @include hover {
+        transform: translateY(calc(-50% - 50px)) scale(1.1);
+
+        @include responsive767 {
+          transform: translateY(-50%) scale(1.1);
+        }
+      }
+    }
+
+    .btnSwiperPrev {
+      left: -85px;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='7' height='13' viewBox='0 0 7 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M6 11.5L1 6.50001L6 1.5' stroke='%230090E2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ");
+
+      @include responsive1023 {
+        left: -25px;
+      }
+
+      @include responsive767 {
+        left: -10px;
+      }
+    }
+
+    .btnSwiperNext {
+      right: -85px;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='7' height='13' viewBox='0 0 7 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1 1.5L6 6.49999L1 11.5' stroke='%230090E2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ");
+
+      @include responsive1023 {
+        right: -25px;
+      }
+
+      @include responsive767 {
+        right: -10px;
+      }
+    }
+
+    .picture-block {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 755px;
+      overflow: hidden;
+      border-radius: 20px;
+
+      @include responsive1549 {
+        height: 605px;
+      }
+
+      @include responsive1439 {
+        height: 546px;
+      }
+
+      @include responsive1199 {
+        height: 430px;
+      }
+
+      @include responsive767 {
+        height: auto;
+        padding-top: calc(232 / 343 * 100%);
+      }
+    }
+  }
+
+  .foto-slider-small {
+    margin-top: 80px;
+    overflow: visible;
+
+    @include responsive767 {
+      margin-top: 24px;
+    }
+
+    .swiper-slide {
+      opacity: 0.5;
+      transition: all 0.3s;
+      cursor: pointer;
+
+      @include hover {
+        opacity: 1;
+      }
+
+      &.swiper-slide-thumb-active {
+        opacity: 1;
+      }
+    }
+
+    .picture-block {
+      height: 233px;
+      width: 100%;
+      border-radius: 20px;
+      overflow: hidden;
+
+      @include responsive1549 {
+        height: 219px;
+      }
+
+      @include responsive1439 {
+        height: 172px;
+      }
+
+      @include responsive1199 {
+        height: 131px;
+      }
+
+      @include responsive767 {
+        height: 59px;
+        border-radius: 12px;
+      }
+    }
+  }
+}
+
+.foto-slider-big__controls {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  justify-content: flex-end;
+  margin-top: 40px;
+  position: relative;
+  transform: translateX(200px);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+  z-index: 5;
+
+  @include responsive1549 {
+    margin-top: 32px;
+    transform: translateX(150px);
+  }
+
+  @include responsive1439 {
+    transform: translateX(110px);
+  }
+
+  @include responsive1023 {
+    transform: translateX(0);
+  }
+
+  @include responsive767 {
+    display: none;
+  }
+
+  .btn {
+    max-width: 270px;
+    padding: 14px;
+    font-size: 16px;
+
+    @include responsive1439 {
+      max-width: 220px;
+      padding: 0;
+      height: 45px;
+      font-size: 13px;
+    }
+  }
+}

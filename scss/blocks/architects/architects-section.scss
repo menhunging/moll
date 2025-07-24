@@ -7,6 +7,7 @@
   @include responsive767 {
     font-size: 12px;
     line-height: 16px;
+    padding: 20px 0;
   }
 
   .container {
@@ -142,5 +143,57 @@
 
   .form-call {
     padding: 0;
+  }
+}
+
+.dop-text-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 56px;
+
+  @include responsive1199 {
+    gap: 20px;
+  }
+
+  @include responsive767 {
+    flex-direction: column;
+  }
+}
+
+.dop-text-block__left {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 50%;
+
+  @include responsive1199 {
+    gap: 20px;
+  }
+
+  @include responsive767 {
+    width: 100%;
+  }
+}
+
+.dop-text-block__right {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 50%;
+
+  @include responsive1199 {
+    gap: 20px;
+  }
+
+  @include responsive767 {
+    width: 100%;
+  }
+
+  .picture-block {
+    width: 100%;
+    padding-top: calc(434 / 711 * 100%);
+    border-radius: 20px;
+    overflow: hidden;
   }
 }

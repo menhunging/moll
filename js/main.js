@@ -382,6 +382,35 @@ $(document).ready(function () {
     });
   }
 
+  if ($(".product-section__invis").length > 0) {
+    const invis = $(".product-section__invis");
+    const bodySection = $(".product-section-body");
+    const footer = $("footer");
+
+    function isInViewport(elem) {
+      const windowTop = $(window).scrollTop();
+      const windowBottom = windowTop + $(window).height();
+      const elemTop = elem.offset().top;
+      const elemBottom = elemTop + elem.outerHeight();
+
+      return elemBottom > windowTop && elemTop < windowBottom;
+    }
+
+    $(window).on("scroll resize", function () {
+      const windowTop = $(window).scrollTop();
+      const bodyTop = bodySection.offset().top;
+      const bodyVisible = isInViewport(bodySection);
+      const footerVisible = isInViewport(footer);
+      const scrolledAboveBody = windowTop + $(window).height() < bodyTop;
+
+      if (bodyVisible && !footerVisible) {
+        invis.addClass("visible");
+      } else if (footerVisible || scrolledAboveBody) {
+        invis.removeClass("visible");
+      }
+    });
+  }
+
   // sliders
 
   if ($(".slider-catalog").length > 0) {
@@ -598,6 +627,51 @@ $(document).ready(function () {
         .parents(".colors-constr")
         .find(".circleColor")
         .removeClass("hide");
+    });
+  }
+
+  if ($(".foto-slider-big").length > 0) {
+    const thumbFoto = new Swiper(".foto-slider-small", {
+      slidesPerView: 4,
+      spaceBetween: 20,
+      watchSlidesProgress: true,
+      navigation: {
+        nextEl: ".btnSwiperNext",
+        prevEl: ".btnSwiperPrev",
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        type: "bullets",
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: 3,
+          spaceBetween: 8,
+        },
+        390: {
+          slidesPerView: 4,
+          spaceBetween: 8,
+        },
+        768: {
+          slidesPerView: 4,
+          spaceBetween: 16,
+        },
+        1200: {
+          slidesPerView: 4,
+          spaceBetween: 20,
+        },
+      },
+    });
+
+    const fotoMain = new Swiper(".foto-slider-big", {
+      spaceBetween: 10,
+      navigation: {
+        nextEl: ".btnSwiperNext",
+        prevEl: ".btnSwiperPrev",
+      },
+      thumbs: {
+        swiper: thumbFoto,
+      },
     });
   }
 

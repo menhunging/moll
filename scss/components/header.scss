@@ -427,6 +427,7 @@
   &.opened {
     .icon-search {
       opacity: 0;
+      pointer-events: none;
     }
 
     input {

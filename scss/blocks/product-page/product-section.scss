@@ -3,6 +3,7 @@
 
   @include responsive767 {
     padding: 0;
+    overflow: hidden;
   }
 }
 
@@ -852,6 +853,122 @@
       @include responsive767 {
         width: 100%;
         flex-direction: column;
+      }
+    }
+  }
+}
+
+.product-section__invis {
+  position: fixed;
+  bottom: -200px;
+  left: 0;
+  width: 100%;
+  z-index: 8;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+
+  @include responsive1023 {
+    left: 8px;
+    width: calc(100% - 16px);
+  }
+
+  &.visible {
+    bottom: 10px;
+    opacity: 1;
+    pointer-events: initial;
+
+    @include responsive767 {
+      bottom: 80px;
+    }
+  }
+
+  .filter-selected {
+    border: 0;
+    padding: 0;
+    width: auto;
+    max-width: 70%;
+
+    @include responsive1199 {
+      max-width: 60%;
+    }
+
+    @include responsive767 {
+      display: none;
+    }
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $colorWhite;
+    box-shadow: 0px 0px 16px 0px #00000029;
+    padding: 16px 32px;
+    border-radius: 20px;
+
+    @include responsive767 {
+      padding: 8px 16px;
+    }
+  }
+
+  .product-price-info {
+    flex-direction: row;
+    align-items: flex-end;
+    display: flex;
+    margin: 0;
+    width: 30%;
+    flex-wrap: nowrap;
+    gap: 10px;
+
+    @include responsive1199 {
+      width: 40%;
+    }
+
+    @include responsive767 {
+      width: 100%;
+    }
+
+    .price {
+      @include responsive767 {
+        gap: 5px;
+      }
+    }
+
+    .price__old {
+      @include responsive767 {
+        font-size: 12px;
+      }
+    }
+
+    .price__current {
+      @include responsive767 {
+        font-size: 16px;
+      }
+    }
+
+    .product-price-info__title {
+      @include responsive767 {
+        margin-bottom: 10px;
+      }
+    }
+
+    .product-price-info__controls {
+      width: auto;
+      margin: 0;
+
+      .btn {
+        min-width: 197px;
+
+        @include responsive1549 {
+          min-width: initial;
+        }
+
+        @include responsive767 {
+          min-width: 130px;
+          height: 40px;
+          font-size: 14px;
+        }
       }
     }
   }
