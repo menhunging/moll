@@ -15,6 +15,7 @@
 @import "./components/header";
 @import "./components/footer";
 @import "./components/filter";
+@import "./components/404";
 
 // HOME PAGE
 @import "blocks/home-page/grettings-main.scss";
@@ -42,7 +43,13 @@
 @import "blocks/contacts-page/form-call.scss";
 
 // INSTRUCTIONS PAGE
-@import "blocks/instructions/instructions.scss";
+@import "blocks/instructions-page/instructions-page.scss";
+
+// CONSTRUCTIONS PAGE
+@import "blocks/constructions-page/constructions.scss";
+
+// ARCHITECTS PAGE
+@import "blocks/architects/architects-section.scss";
 
 // BLOCKS
 @import "blocks";

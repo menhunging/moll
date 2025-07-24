@@ -45,8 +45,19 @@ $(document).ready(function () {
     let burger = $(".burger-mobile");
     let body = $("body");
     let menu = $(".menu");
+    let menuInvisBurger = $(".menu-invis-mobile__link--menu");
 
     burger.on("click", function () {
+      if (burger.hasClass("opened")) {
+        closeMenu();
+      } else {
+        burger.addClass("opened");
+        menu.addClass("opened").stop().slideDown();
+        body.addClass("is-openMenu");
+      }
+    });
+
+    menuInvisBurger.on("click", function () {
       if (burger.hasClass("opened")) {
         closeMenu();
       } else {
@@ -248,9 +259,28 @@ $(document).ready(function () {
 
   if ($(".filter-btn").length > 0) {
     $(".filter-btn").on("click", function () {
+      $("body").addClass("hidden");
       $(this).toggleClass("active");
       $(".filter-content").stop().slideToggle();
+      $(".overlay").toggleClass("visible");
     });
+
+    $(".filter-title__close").on("click", function () {
+      closeFilter();
+    });
+
+    $(".overlay").on("click", function () {
+      closeFilter();
+    });
+
+    function closeFilter() {
+      if ($(".filter-btn").hasClass("active")) {
+        $("body").removeClass("hidden");
+        $(".overlay").removeClass("visible");
+        $(".filter-btn").removeClass("active");
+        $(".filter-content").stop().slideUp();
+      }
+    }
   }
 
   if ($(".rangeInput").length > 0) {
@@ -313,41 +343,16 @@ $(document).ready(function () {
   }
 
   if ($(".filter").length > 0) {
-    handeFilterMobile();
-
-    $(window).resize(function () {
-      handeFilterMobile();
-    });
-
-    function handeFilterMobile() {
-      if ($(window).width() < 768) {
-        initFilterMobile();
-      } else {
-        destroyFilterMobile();
-      }
-    }
+    initFilterMobile();
 
     function initFilterMobile() {
-      if (!$(".filter").hasClass("init-mobile")) {
-        $(".filter-line__head").on("click", function () {
-          $(this)
-            .toggleClass("opened")
-            .next(".filter-line__body ")
-            .stop()
-            .slideToggle();
-        });
-
-        $(".filter").addClass("init-mobile");
-      }
-    }
-
-    function destroyFilterMobile() {
-      if ($(".filter").hasClass("init-mobile")) {
-        $(".filter-line__head").off("click");
-        $(".filter").removeClass("init-mobile");
-        $(".filter-line__head").removeClass("opened");
-        $(".filter-line__body").removeAttr("style");
-      }
+      $(".filter-line__head").on("click", function () {
+        $(this)
+          .toggleClass("opened")
+          .next(".filter-line__body ")
+          .stop()
+          .slideToggle();
+      });
     }
   }
 
@@ -526,6 +531,74 @@ $(document).ready(function () {
         },
       });
     }
+  }
+
+  if ($(".constructionSlider").length > 0) {
+    const sliders = document.querySelectorAll(".constructionSlider");
+    let mySwipers = [];
+
+    function sliderinit() {
+      sliders.forEach((slider, index) => {
+        let navNext = undefined;
+        let navPrev = undefined;
+
+        if (!slider.swiper) {
+          navNext = $(slider).find(".btnSwiperNext")[0];
+          navPrev = $(slider).find(".btnSwiperPrev")[0];
+
+          mySwipers[index] = new Swiper(slider, {
+            slidesPerView: 4,
+            spaceBetween: 24,
+            navigation: {
+              nextEl: navNext && navNext,
+              prevEl: navPrev && navPrev,
+            },
+            // pagination: {
+            //   el: $(slider).find(".swiper-pagination")[0],
+            //   type: "bullets",
+            // },
+            breakpoints: {
+              0: {
+                slidesPerView: 1.25,
+                spaceBetween: 12,
+              },
+              640: {
+                slidesPerView: 2.5,
+                spaceBetween: 12,
+              },
+              768: {
+                slidesPerView: 3.5,
+                spaceBetween: 12,
+              },
+              1024: {
+                slidesPerView: 4,
+                spaceBetween: 16,
+              },
+              1200: {
+                slidesPerView: 4,
+                spaceBetween: 16,
+              },
+              1550: {
+                slidesPerView: 4,
+                spaceBetween: 24,
+              },
+            },
+          });
+        } else {
+          return;
+        }
+      });
+    }
+
+    sliders.length && sliderinit();
+
+    $(".circleColorPlus").on("click", function () {
+      $(this).hide();
+      $(this)
+        .parents(".colors-constr")
+        .find(".circleColor")
+        .removeClass("hide");
+    });
   }
 
   // /sliders

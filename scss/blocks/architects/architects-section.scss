@@ -1,0 +1,146 @@
+.architects-section {
+  @include responsive1549 {
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  @include responsive767 {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+
+    @include responsive1199 {
+      gap: 30px;
+    }
+
+    @include responsive767 {
+      gap: 32px;
+    }
+
+    & > *:not(div) {
+      max-width: 830px;
+
+      @include responsive1549 {
+        max-width: 800px;
+      }
+
+      @include responsive1199 {
+        max-width: 550px;
+      }
+
+      @include responsive767 {
+        max-width: 100%;
+      }
+    }
+  }
+
+  ol {
+    position: relative;
+
+    li {
+      display: block;
+      position: relative;
+      padding-left: 15px;
+
+      @include before {
+        display: block;
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background-color: $colorBlack;
+        top: 7px;
+        left: 0;
+      }
+    }
+  }
+
+  ul {
+    position: relative;
+    list-style-type: decimal;
+
+    li {
+      min-height: 23px;
+
+      & + li {
+        margin-top: 9px;
+      }
+
+      &::marker {
+        font-size: 20px;
+
+        @include responsive767 {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  a {
+    text-decoration: underline;
+    color: $colorBlue;
+
+    @include hover {
+      text-decoration-color: transparent;
+    }
+  }
+
+  .architects-section__row {
+    display: flex;
+    justify-content: space-between;
+    gap: 35px;
+
+    @include responsive767 {
+      gap: 32px;
+      flex-direction: column;
+    }
+  }
+
+  .architects-section__col {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include responsive767 {
+      width: 100%;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-bottom: 0;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: -8px;
+  }
+
+  .form-call {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+.form-section {
+  background-color: #f1f1f1;
+
+  .form-call {
+    padding: 0;
+  }
+}
