@@ -861,6 +861,30 @@ section {
       background-color: #3aad28;
     }
   }
+
+  &--order {
+    color: #6b6b6b;
+
+    &::before {
+      background-color: #6b6b6b;
+    }
+  }
+
+  &--transit {
+    color: #0090e2;
+
+    &::before {
+      background-color: #0090e2;
+    }
+  }
+
+  &--sale {
+    color: #ff0329;
+
+    &::before {
+      background-color: #ff0329;
+    }
+  }
 }
 
 .price {
@@ -949,15 +973,24 @@ section {
     @include responsive1199 {
       font-size: 12px;
       line-height: 14px;
-      min-height: 118px;
-      width: 100px;
-      padding-bottom: 20px;
+      min-height: 98px;
+      width: 95px;
+      padding-bottom: 15px;
     }
 
     @include responsive1023 {
       min-height: 108px;
       width: 90px;
       font-size: 11px;
+    }
+
+    @include responsive767 {
+      min-height: 68px;
+      width: 74px;
+      font-size: 9px;
+      background-size: 30px;
+      padding-bottom: 8px;
+      background-position: center 7px;
     }
 
     @include hover {
@@ -1176,7 +1209,7 @@ section {
     gap: 16px;
     list-style-type: disc;
 
-    li{
+    li {
     }
   }
 
@@ -1187,5 +1220,89 @@ section {
     @include hover {
       text-decoration-color: transparent;
     }
+  }
+}
+
+.bx-filter-parameters-box-container {
+  width: 100%;
+}
+
+.application-block {
+  position: fixed;
+  background-color: $colorBlue;
+  color: $colorWhite;
+  bottom: 10px;
+  right: 10px;
+  border-radius: 20px;
+  padding: 20px 30px;
+  width: 270px;
+  z-index: 5;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+
+  .btn {
+    color: $colorWhite;
+    font-size: 14px;
+    border: solid 1px $colorWhite;
+    margin-top: 10px;
+    padding: 9px;
+    height: auto;
+
+    @include hover {
+      background-color: $colorWhite;
+      color: $colorBlack;
+    }
+  }
+
+  .application-block__text {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 2px 0px rgba(255, 255, 255, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 5px 8px rgba(255, 255, 255, 1);
+  }
+  100% {
+    box-shadow: 0 0 2px 0px rgba(255, 255, 255, 0.6);
+  }
+}
+
+.swiper-button-lock {
+  display: none !important;
+}
+
+.basket-item-block-info .basket-items-list-item-dops {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  max-width: 70%;
+}
+
+.basket-item-info-name-link > *,
+.basket-item-info-name-link {
+  transition: all 0.3s;
+}
+
+.video-desktop {
+  display: block;
+
+  @include responsive767 {
+    display: none;
+  }
+}
+
+.video-mobile {
+  display: none;
+
+  @include responsive767 {
+    display: block;
   }
 }

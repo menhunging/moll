@@ -80,6 +80,11 @@
     opacity: 0.5;
     pointer-events: none;
   }
+
+  &.btn--inBasket {
+    background-color: #ebebeb;
+    color: $colorBlack; 
+  }
 }
 
 .btn-clear-search {

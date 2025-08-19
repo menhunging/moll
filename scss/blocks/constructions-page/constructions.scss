@@ -217,15 +217,19 @@
 }
 
 .constructionSlider {
+  overflow: visible;
+
   @include responsive1023 {
     overflow: visible;
   }
 
-  .picture-block {
-    position: relative;
+  .swiper-slide {
+    height: auto;
   }
 
-  .swiper-slide {
+  .picture-block {
+    position: relative;
+    height: auto;
   }
 
   .status {
@@ -233,7 +237,7 @@
   }
 
   .product__name {
-    margin-bottom: 0;
+    margin-bottom: 20px;
   }
 
   .product {
@@ -254,7 +258,7 @@
     }
 
     ul {
-      margin-top: 24px;
+      margin-top: auto;
 
       @include responsive1549 {
         margin-top: 20px;
@@ -314,11 +318,7 @@
 
   .swiper-controls {
     justify-content: flex-end;
-    display: none;
-
-    @include responsive1023 {
-      display: flex;
-    }
+    display: flex;
   }
 
   .swiper-button-disabled {

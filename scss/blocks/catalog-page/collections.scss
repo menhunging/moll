@@ -20,6 +20,7 @@
     }
 
     @include responsive767 {
+      padding-top: 0;
       padding-bottom: 40px;
     }
   }
@@ -35,6 +36,20 @@
 
     @include responsive767 {
       flex-direction: column-reverse;
+    }
+
+    .picture-block {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+
+      img {
+        @include responsive1199 {
+          object-fit: contain;
+        }
+      }
     }
   }
 
@@ -64,13 +79,9 @@
       margin-top: 50px;
 
       @include responsive767 {
-        flex-wrap: nowrap;
-        width: calc(100% + 32px);
-        overflow: auto;
-        left: -16px;
-        padding: 0 16px;
         position: relative;
         margin-top: 40px;
+        justify-content: center;
       }
 
       li {
@@ -91,7 +102,9 @@
           }
 
           @include hover {
-            transform: scale(0.9);
+            background-color: $colorBlue;
+            color: $colorWhite;
+            box-shadow: 0px 4px 8px 0px #00000059;
           }
         }
       }
@@ -168,23 +181,15 @@
     }
   }
 
-  .picture-block {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-
-    img {
-      @include responsive1199 {
-        object-fit: contain;
-      }
-    }
-  }
-
   .collections__body {
     padding: 40px 0;
     overflow: hidden;
+
+    .video-section {
+      & + .adv-section {
+        padding-top: 0;
+      }
+    }
   }
 }
 

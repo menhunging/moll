@@ -135,4 +135,18 @@
   @include responsive1199 {
     padding-bottom: 16px;
   }
+
+  p + p {
+    margin-top: 20px;
+  }
+
+  a {
+    color: $colorBlue;
+    text-decoration: underline;
+    transition: text-decoration 0.3s;
+
+    @include hover {
+      text-decoration-color: transparent;
+    }
+  }
 }

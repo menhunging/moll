@@ -4,7 +4,7 @@
   top: 0;
   left: 0;
   z-index: 10;
-  transition: all 0.3s;
+  transition: all 0.3s, background-color 0s;
 
   @include responsive767 {
     position: fixed;
@@ -312,7 +312,6 @@
     @include responsive767 {
       display: block;
       order: -1;
-      color: #b6b6b6;
       font-weight: 700;
       font-size: 14px;
       line-height: 16px;

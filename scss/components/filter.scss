@@ -10,6 +10,7 @@
 .filter {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 
   @include responsive767 {
     border-top: solid 1px $colorBorder;
@@ -92,6 +93,7 @@
   flex-wrap: wrap;
   gap: 24px;
   padding: 25px 30px;
+  margin-right: auto;
 
   @include responsive1199 {
     padding: 25px 16px;
@@ -111,6 +113,7 @@
     gap: 16px 24px;
     flex: initial;
     padding: 0px 0 25px;
+    width: 100%;
   }
 
   .filterCheck {
@@ -222,8 +225,8 @@
   }
 
   @include responsive1023 {
-    width: 125px;
-    gap: 0;
+    width: 155px;
+    gap: 5px;
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -293,7 +296,7 @@
     background-color: $colorWhite;
     border-bottom-right-radius: 20px;
     border-bottom-left-radius: 20px;
-    padding-right: 50px;
+    padding-right: 20px;
     position: absolute;
     top: 100%;
     right: -20px;
@@ -380,8 +383,12 @@
 
   .filter-selected__text {
     font-weight: 400;
-    font-size: 16px;
-    line-height: 18px;
+    font-size: 14px;
+    line-height: 16px;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
     @include responsive1439 {
       font-size: 14px;
@@ -397,6 +404,10 @@
     width: 12px;
     height: 12px;
     display: flex;
+
+    svg {
+      display: none;
+    }
 
     @include hover {
       transform: scale(0.9);
@@ -534,6 +545,23 @@
       &::before {
         transform: scale(1);
         opacity: 1;
+      }
+    }
+  }
+}
+
+.check-color {
+  label {
+    cursor: pointer;
+  }
+
+  input {
+    &:checked {
+      & + label {
+        &::before {
+          transform: scale(1);
+          opacity: 1;
+        }
       }
     }
   }

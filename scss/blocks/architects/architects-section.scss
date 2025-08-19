@@ -64,7 +64,7 @@
 
   ul {
     position: relative;
-    list-style-type: decimal;
+    list-style-type: disc;
 
     li {
       min-height: 23px;
@@ -86,6 +86,7 @@
   a {
     text-decoration: underline;
     color: $colorBlue;
+    transition: text-decoration 0.3s;
 
     @include hover {
       text-decoration-color: transparent;
@@ -151,6 +152,7 @@
   justify-content: space-between;
   align-items: flex-start;
   gap: 56px;
+  width: 100%;
 
   @include responsive1199 {
     gap: 20px;

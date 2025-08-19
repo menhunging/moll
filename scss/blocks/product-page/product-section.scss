@@ -1,5 +1,5 @@
 .product-section {
-  padding-bottom: 0;
+  padding: 0;
 
   @include responsive767 {
     padding: 0;
@@ -365,6 +365,7 @@
   }
 
   .dop-item__controls {
+    margin-left: auto;
   }
 
   .btn-basket {
@@ -372,7 +373,7 @@
     color: $colorWhite;
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 12px;
     border-radius: 36px;
     padding: 14px 24px;
     min-width: 162px;
@@ -429,6 +430,8 @@
     margin-left: auto;
     transition: all 0.3s;
     white-space: nowrap;
+    justify-content: center;
+    text-align: center;
 
     @include responsive1199 {
       min-width: 123px;
@@ -533,7 +536,7 @@
     font-size: 18px;
     line-height: 20px;
     display: block;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 
     @include responsive1199 {
       font-size: 16px;
@@ -568,7 +571,7 @@
     margin-top: 40px;
 
     @include responsive1199 {
-      margin-top: 20px;
+      margin-top: 30px;
     }
 
     .btn {
@@ -856,6 +859,10 @@
       }
     }
   }
+
+  .video-section{
+    padding: 30px 0;
+  }
 }
 
 .product-section__invis {
@@ -879,22 +886,25 @@
     pointer-events: initial;
 
     @include responsive767 {
-      bottom: 80px;
+      bottom: 20px;
     }
   }
 
   .filter-selected {
     border: 0;
     padding: 0;
-    width: auto;
-    max-width: 70%;
+    width: 70%;
 
     @include responsive1199 {
-      max-width: 60%;
+      width: 60%;
     }
 
     @include responsive767 {
       display: none;
+    }
+
+    .filter-selected__list {
+      padding: 3px;
     }
   }
 
